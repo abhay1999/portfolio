@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import SectionHeader from '../../components/ui/SectionHeader';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Blog() {

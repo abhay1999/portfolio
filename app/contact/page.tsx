@@ -41,7 +41,7 @@ export default function Contact() {
         subject: '',
         message: '',
       });
-    } catch (err) {
+    } catch {
       setError('There was an error submitting your message. Please try again.');
     } finally {
       setIsSubmitting(false);
@@ -298,7 +298,7 @@ export default function Contact() {
               Contact Information
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-8">
-              Feel free to reach out to me through the following channels. I'm always open to discussing new projects, opportunities, or collaborations.
+              Feel free to reach out to me through the following channels. I&apos;m always open to discussing new projects, opportunities, or collaborations.
             </p>
 
             <div className="space-y-6">

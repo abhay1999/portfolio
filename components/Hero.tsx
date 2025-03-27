@@ -122,7 +122,7 @@ const Hero = () => {
             className="text-center lg:text-left"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-gray-900 dark:text-white leading-tight mb-6">
-              Hi, I'm{' '}
+              Hi, I&apos;m{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-700">
                 Shubhangi Gupta
               </span>

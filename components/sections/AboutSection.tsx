@@ -2,20 +2,10 @@
 import { motion } from 'framer-motion';
 import SectionHeader from '../ui/SectionHeader';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
 // The main AboutSection component
 const AboutSectionContent = () => {
-  const skills = [
-    { name: 'Food Science', percentage: 92 },
-    { name: 'Food Processing Technology', percentage: 88 },
-    { name: 'Food Safety Management', percentage: 85 },
-    { name: 'Product Development', percentage: 90 },
-    { name: 'Nutrition Analysis', percentage: 80 },
-    { name: 'Quality Control', percentage: 87 },
-  ];
-
   const educationTimeline = [
     {
       degree: 'B.Tech in Food Technology',

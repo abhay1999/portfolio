@@ -1,7 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
 import SectionHeader from '../ui/SectionHeader';
-import Image from 'next/image';
 
 const ExperienceSection = () => {
   const experiences = [
