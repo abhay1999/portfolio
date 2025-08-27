@@ -7,13 +7,13 @@ import AboutSection from '@/components/sections/AboutSection';
 import ExperienceSection from '@/components/sections/ExperienceSection';
 import SkillsSection from '@/components/sections/SkillsSection';
 import ContactSection from '@/components/sections/ContactSection';
-import BlogSection from '@/components/sections/BlogSection';
+// import BlogSection from '@/components/sections/BlogSection';
 
 export default function Home() {
   const aboutRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
-  const blogRef = useRef<HTMLDivElement>(null);
+  // const blogRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -40,10 +40,12 @@ export default function Home() {
         <SkillsSection />
       </section>
       
-      {/* Blog Section */}
-      <section id="blog" ref={blogRef} className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
-        <BlogSection />
-      </section>
+      {/* Blog Section (temporarily disabled) */}
+      {false && (
+        <section id="blog" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
+          <BlogSection />
+        </section>
+      )}
       
       {/* Contact Section */}
       <section id="contact" ref={contactRef} className="py-16 md:py-24">

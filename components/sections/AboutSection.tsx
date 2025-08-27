@@ -11,7 +11,7 @@ const AboutSectionContent = () => {
       degree: 'B.Tech in Food Technology',
       institution: 'Nims University, Jaipur',
       period: '2023 - Present',
-      description: 'Specializing in food processing, product development, and food safety management systems.',
+      description: 'Specializing in Food Processing, Product Development, and Research and Development.',
     },
     {
       degree: 'Higher Secondary Education',

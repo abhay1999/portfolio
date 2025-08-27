@@ -14,7 +14,7 @@ const ExperienceSection = () => {
     {
       title: 'Food Technology Entrepreneurship Development And Operation of Food Processing Pilot Plants ',
       company: 'NIFTEM Sonipat, Haryana',
-      period: 'Dec 2024 - Jan 2025',
+      period: 'Dec 2024',
       description: 'Gained comprehensive hands-on experience across diverse food plants (fruit/veg, dairy, bakery, RTE, meat), advancing skills in processing, preservation, and quality control. This multifaceted exposure enhanced practical industry insights and technical understanding of food production systems.',
       skills: ['Quality Control', 'Product Development', 'Food Safety'],
     },

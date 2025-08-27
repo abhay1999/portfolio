@@ -38,12 +38,7 @@ const SkillsSection = () => {
       date: 'April 2025',
       image: '/certificate/cert_2.jpeg',
     },
-    {
-      title: 'Food and Beverage Management',
-      issuer: 'Università Commerciale Luigi Bocconi - COURSERA',
-      date: 'January 2025',
-      image: '/certificate/cert_3.jpeg',
-    },
+   
     {
       title: 'Alternative Protien: Future of Sustainable Food',
       issuer: 'FoodYaari Academy',
@@ -55,6 +50,12 @@ const SkillsSection = () => {
       issuer: 'Nestlé YEP Academy',
       date: 'February 2025',
       image: '/certificate/cert_5.jpeg',
+    },
+    {
+      title: 'Food and Beverage Management',
+      issuer: 'Università Commerciale Luigi Bocconi - COURSERA',
+      date: 'January 2025',
+      image: '/certificate/cert_3.jpeg',
     },
     {
       title: 'Food Defense Awareness',
