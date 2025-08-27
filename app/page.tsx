@@ -40,12 +40,7 @@ export default function Home() {
         <SkillsSection />
       </section>
       
-      {/* Blog Section (temporarily disabled) */}
-      {false && (
-        <section id="blog" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
-          <BlogSection />
-        </section>
-      )}
+      {/* Blog Section disabled */}
       
       {/* Contact Section */}
       <section id="contact" ref={contactRef} className="py-16 md:py-24">
