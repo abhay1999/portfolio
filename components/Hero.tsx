@@ -258,7 +258,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center lg:justify-end mb-12 lg:mb-0"
           >
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
               {/* Outer shadow/glow effect */}
@@ -344,7 +344,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 flex flex-wrap justify-center gap-6"
+          className="mt-24 md:mt-16 flex flex-wrap justify-center gap-6"
         >
           <a
             href="https://www.linkedin.com/in/shubhangi-gupta-981219225/"
