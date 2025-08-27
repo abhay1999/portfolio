@@ -49,12 +49,14 @@ const Navbar = () => {
   
   const scrollToSection = (sectionId: string) => {
     setIsOpen(false);
+    // If not on the homepage, navigate to the section there
+    if (typeof window !== 'undefined' && window.location.pathname !== '/') {
+      window.location.href = `/#${sectionId}`;
+      return;
+    }
     const element = document.getElementById(sectionId);
     if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: 'smooth'
-      });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
