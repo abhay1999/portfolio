@@ -1,5 +1,7 @@
 'use client';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import SectionHeader from '../ui/SectionHeader';
 
 const ExperienceSection = () => {
@@ -10,6 +12,7 @@ const ExperienceSection = () => {
       period: 'Jun 2025 - July 2025',
       description: 'Performed sensory and lab analyses on peanut butter samples, developed a new flavour variant, and collaborated with R&D to enhance quality, shelf life, and sensory attributes.',
       skills: ['Research Methods', 'Data Analysis', 'Food Preservation'],
+      certificateImage: '/certificate/cert_5.jpeg',
     },
     {
       title: 'Food Technology Entrepreneurship Development And Operation of Food Processing Pilot Plants ',
@@ -17,6 +20,7 @@ const ExperienceSection = () => {
       period: 'Dec 2024',
       description: 'Gained comprehensive hands-on experience across diverse food plants (fruit/veg, dairy, bakery, RTE, meat), advancing skills in processing, preservation, and quality control. This multifaceted exposure enhanced practical industry insights and technical understanding of food production systems.',
       skills: ['Quality Control', 'Product Development', 'Food Safety'],
+      certificateImage: '/certificate/cert_2.jpeg',
     },
   
     // {
@@ -60,6 +64,16 @@ const ExperienceSection = () => {
     hidden: { opacity: 0, y: 40 },
     show: { opacity: 1, y: 0 },
   };
+
+  const [openCert, setOpenCert] = useState<null | { image: string; title: string }>(null);
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpenCert(null);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
 
   return (
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
@@ -129,6 +143,18 @@ const ExperienceSection = () => {
                         </span>
                       ))}
                     </div>
+                    {experience.certificateImage && (
+                      <div className="mt-5">
+                        <button
+                          type="button"
+                          onClick={() => setOpenCert({ image: experience.certificateImage as string, title: experience.title })}
+                          className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-primary-200/60 dark:border-primary-800/60 text-primary-700 dark:text-primary-300 bg-primary-50 hover:bg-primary-100 dark:bg-primary-900/20 dark:hover:bg-primary-900/30 transition-colors text-sm font-medium"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path fillRule="evenodd" d="M4.5 3.75A2.25 2.25 0 0 0 2.25 6v12A2.25 2.25 0 0 0 4.5 20.25h15A2.25 2.25 0 0 0 21.75 18V6A2.25 2.25 0 0 0 19.5 3.75h-15ZM3.75 6c0-.414.336-.75.75-.75h15c.414 0 .75.336.75.75v2.25h-16.5V6Zm0 3.75v8.25c0 .414.336.75.75.75h15a.75.75 0 0 0 .75-.75v-8.25h-16.5Zm4.5 1.5A.75.75 0 0 1 9 12v4.5a.75.75 0 0 1-1.5 0V12a.75.75 0 0 1 .75-.75Zm3.75 0A.75.75 0 0 1 12.75 12v4.5a.75.75 0 0 1-1.5 0V12a.75.75 0 0 1 .75-.75Zm3.75 0A.75.75 0 0 1 16.5 12v4.5a.75.75 0 0 1-1.5 0V12a.75.75 0 0 1 .75-.75Z" clipRule="evenodd" /></svg>
+                          View Certificate
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -139,6 +165,51 @@ const ExperienceSection = () => {
           </motion.div>
         </div>
       </div>
+      <AnimatePresence>
+        {openCert && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm supports-[backdrop-filter]:backdrop-blur-md"
+            role="dialog"
+            aria-modal="true"
+            onClick={() => setOpenCert(null)}
+          >
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 20, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="relative mx-4 w-full max-w-4xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative w-full h-[70vh] bg-gray-900/10 rounded-lg overflow-hidden">
+                <Image
+                  src={openCert.image}
+                  alt={openCert.title}
+                  fill
+                  style={{ objectFit: 'contain' }}
+                  priority
+                />
+              </div>
+              <button
+                type="button"
+                onClick={() => setOpenCert(null)}
+                className="absolute -top-3 -right-3 p-2 rounded-full bg-white text-gray-700 shadow hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+                aria-label="Close"
+                title="Close"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path fillRule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" /></svg>
+              </button>
+              <div className="mt-3 text-center text-sm text-gray-200">
+                {openCert.title}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Projects Section (commented out for future use)
       <div>
