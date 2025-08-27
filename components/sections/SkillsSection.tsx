@@ -1,5 +1,6 @@
 'use client';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import SectionHeader from '../ui/SectionHeader';
 import Image from 'next/image';
 
@@ -26,28 +27,40 @@ const SkillsSection = () => {
 
   const certifications = [
     {
-      title: 'Food Safety Management Systems - ISO 22000',
-      issuer: 'International Organization for Standardization',
-      date: 'November 2023',
-      image: '/placeholder.jpg',
+      title: 'Promotion of Biofortified Crops for Nutrition Security ',
+      issuer: 'National Institute of Agricultural Extension Management (MANAGE)',
+      date: 'July 2025',
+      image: '/certificate/cert_1.jpeg',
     },
     {
-      title: 'HACCP Certification',
-      issuer: 'Food Safety and Standards Authority of India',
-      date: 'August 2023',
-      image: '/placeholder.jpg',
+      title: 'Rice Fortification Technology',
+      issuer: 'Indian Institute of Technology, Kharagpur',
+      date: 'April 2025',
+      image: '/certificate/cert_2.jpeg',
     },
     {
-      title: 'Advanced Food Product Development',
-      issuer: 'Food Technology Institute',
-      date: 'May 2023',
-      image: '/placeholder.jpg',
+      title: 'Food and Beverage Management',
+      issuer: 'Università Commerciale Luigi Bocconi - COURSERA',
+      date: 'January 2025',
+      image: '/certificate/cert_3.jpeg',
     },
     {
-      title: 'Nutrition and Health: Food Risks',
-      issuer: 'Wageningen University & Research',
-      date: 'February 2023',
-      image: '/placeholder.jpg',
+      title: 'Alternative Protien: Future of Sustainable Food',
+      issuer: 'FoodYaari Academy',
+      date: 'February 2025',
+      image: '/certificate/cert_4.jpeg',
+    },
+    {
+      title: 'Food Product Development',
+      issuer: 'Nestlé YEP Academy',
+      date: 'February 2025',
+      image: '/certificate/cert_5.jpeg',
+    },
+    {
+      title: 'Food Defense Awareness',
+      issuer: 'Food Safety Preventive Controls Alliance (FSPCA)',
+      date: 'June 2024',
+      image: '/certificate/cert_6.jpeg',
     },
   ];
 
@@ -61,6 +74,16 @@ const SkillsSection = () => {
     { name: 'Laboratory Information Management Systems', icon: '💻' },
     { name: 'Statistical Analysis Software', icon: '📊' },
   ];
+
+  const [openCert, setOpenCert] = useState<null | { image: string; title: string }>(null);
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpenCert(null);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
 
   return (
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
@@ -261,17 +284,23 @@ const SkillsSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
             >
-              <div className="md:w-1/3 relative bg-gray-200 dark:bg-gray-700 h-48 md:h-auto">
+              <div className="md:w-1/3 relative bg-gray-200 dark:bg-gray-700 h-48 md:h-auto cursor-zoom-in">
                 <div className="absolute inset-0 flex items-center justify-center text-3xl text-gray-400 dark:text-gray-500">
                   Certificate
                 </div>
                 {/* Uncomment when you have actual images */}
-                {/* <Image
+                {<Image
                   src={cert.image}
                   alt={cert.title}
                   fill
                   style={{ objectFit: 'cover' }}
-                /> */}
+                /> }
+                <button
+                  type="button"
+                  onClick={() => setOpenCert({ image: cert.image, title: cert.title })}
+                  aria-label={`View certificate: ${cert.title}`}
+                  className="absolute inset-0 z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+                />
               </div>
               <div className="p-6 md:w-2/3">
                 <h4 className="text-xl font-display font-bold text-gray-900 dark:text-white mb-2">
@@ -284,6 +313,51 @@ const SkillsSection = () => {
           ))}
         </div>
       </div>
+      <AnimatePresence>
+        {openCert && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm supports-[backdrop-filter]:backdrop-blur-md"
+            role="dialog"
+            aria-modal="true"
+            onClick={() => setOpenCert(null)}
+          >
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 20, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="relative mx-4 w-full max-w-4xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative w-full h-[70vh] bg-gray-900/10 rounded-lg overflow-hidden">
+                <Image
+                  src={openCert.image}
+                  alt={openCert.title}
+                  fill
+                  style={{ objectFit: 'contain' }}
+                  priority
+                />
+              </div>
+              <button
+                type="button"
+                onClick={() => setOpenCert(null)}
+                className="absolute -top-3 -right-3 p-2 rounded-full bg-white text-gray-700 shadow hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+                aria-label="Close"
+                title="Close"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path fillRule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" /></svg>
+              </button>
+              <div className="mt-3 text-center text-sm text-gray-200">
+                {openCert.title}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

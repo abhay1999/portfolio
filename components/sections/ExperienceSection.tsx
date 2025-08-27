@@ -5,19 +5,20 @@ import SectionHeader from '../ui/SectionHeader';
 const ExperienceSection = () => {
   const experiences = [
     {
-      title: 'Food Technology Entrepreneurship Development And Operation of Food Processing Pilot Plants ',
-      company: 'NIFTEM Sonipat, Haryana',
-      period: 'Dec 2024 - Jan 2025',
-      description: 'Gained comprehensive hands-on experience across diverse food plants (fruit/veg, dairy, bakery, RTE, meat), advancing skills in processing, preservation, and quality control. This multifaceted exposure enhanced practical industry insights and technical understanding of food production systems.',
-      skills: ['Quality Control', 'Product Development', 'Food Safety'],
-    },
-    {
       title: 'Research and Development Intern',
       company: 'NuttyVillage (CSIR_IITR) Lucknow',
       period: 'Jun 2025 - July 2025',
       description: 'Performed sensory and lab analyses on peanut butter samples, developed a new flavour variant, and collaborated with R&D to enhance quality, shelf life, and sensory attributes.',
       skills: ['Research Methods', 'Data Analysis', 'Food Preservation'],
     },
+    {
+      title: 'Food Technology Entrepreneurship Development And Operation of Food Processing Pilot Plants ',
+      company: 'NIFTEM Sonipat, Haryana',
+      period: 'Dec 2024 - Jan 2025',
+      description: 'Gained comprehensive hands-on experience across diverse food plants (fruit/veg, dairy, bakery, RTE, meat), advancing skills in processing, preservation, and quality control. This multifaceted exposure enhanced practical industry insights and technical understanding of food production systems.',
+      skills: ['Quality Control', 'Product Development', 'Food Safety'],
+    },
+  
     // {
     //   title: 'Food Product Developer (Project)',
     //   company: 'University Innovation Hub',
