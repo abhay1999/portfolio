@@ -119,20 +119,20 @@ const ContactSection = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 md:px-6">
+    <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <SectionHeader
         title="Contact Me"
         subtitle="Get in touch for collaboration, opportunities, or just to say hello."
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mt-12 md:mt-16">
         {/* Contact Form */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-sm"
+          className="bg-gray-50 dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow-sm"
         >
           <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white mb-6">
             Send a Message

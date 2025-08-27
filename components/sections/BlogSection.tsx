@@ -89,7 +89,7 @@ const BlogSection = () => {
   });
 
   return (
-    <div className="container mx-auto px-4 md:px-6">
+    <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <SectionHeader
         title="Blog & Articles"
         subtitle="Sharing insights and knowledge about food technology, innovation, and industry trends."
@@ -97,7 +97,7 @@ const BlogSection = () => {
 
       <div className="mt-12">
         {/* Search and Filter */}
-        <div className="flex flex-col md:flex-row justify-between items-center mb-10 space-y-4 md:space-y-0">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-10 space-y-4 md:space-y-0">
           {/* Category Filters */}
           <div className="flex flex-wrap gap-2">
             {categories.map(category => (
@@ -243,7 +243,7 @@ const BlogSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="mt-20 bg-gradient-to-r from-primary-600 to-primary-800 rounded-lg p-8 md:p-12"
+        className="mt-16 md:mt-20 bg-gradient-to-r from-primary-600 to-primary-800 rounded-lg p-8 md:p-12"
       >
         <div className="max-w-3xl mx-auto text-center">
           <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">

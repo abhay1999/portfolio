@@ -1,13 +1,13 @@
 'use client';
 import { useRef } from 'react';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import Footer from '../components/Footer';
-import AboutSection from '../components/sections/AboutSection';
-import ExperienceSection from '../components/sections/ExperienceSection';
-import SkillsSection from '../components/sections/SkillsSection';
-import ContactSection from '../components/sections/ContactSection';
-import BlogSection from '../components/sections/BlogSection';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import Footer from '@/components/Footer';
+import AboutSection from '@/components/sections/AboutSection';
+import ExperienceSection from '@/components/sections/ExperienceSection';
+import SkillsSection from '@/components/sections/SkillsSection';
+import ContactSection from '@/components/sections/ContactSection';
+import BlogSection from '@/components/sections/BlogSection';
 
 export default function Home() {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -26,27 +26,27 @@ export default function Home() {
       </section>
       
       {/* About Section */}
-      <section id="about" ref={aboutRef} className="py-20">
+      <section id="about" ref={aboutRef} className="py-16 md:py-24">
         <AboutSection />
       </section>
       
       {/* Experience Section */}
-      <section id="experience" ref={experienceRef} className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section id="experience" ref={experienceRef} className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
         <ExperienceSection />
       </section>
       
       {/* Skills Section */}
-      <section id="skills" ref={skillsRef} className="py-20">
+      <section id="skills" ref={skillsRef} className="py-16 md:py-24">
         <SkillsSection />
       </section>
       
       {/* Blog Section */}
-      <section id="blog" ref={blogRef} className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section id="blog" ref={blogRef} className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
         <BlogSection />
       </section>
       
       {/* Contact Section */}
-      <section id="contact" ref={contactRef} className="py-20">
+      <section id="contact" ref={contactRef} className="py-16 md:py-24">
         <ContactSection />
       </section>
       

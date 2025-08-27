@@ -66,7 +66,7 @@ const Navbar = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
@@ -145,7 +145,7 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
             className="md:hidden bg-white dark:bg-gray-900 shadow-lg"
           >
-            <div className="container mx-auto px-4 py-4">
+            <div className="container mx-auto px-4 md:px-6 lg:px-8 py-4">
               <nav className="flex flex-col space-y-3">
                 {navLinks.map((link) => (
                   <button

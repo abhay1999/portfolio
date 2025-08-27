@@ -22,15 +22,15 @@ const AboutSectionContent = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 md:px-6">
+    <div className="container mx-auto px-4 md:px-6 lg:px-8">
       {/* About Section */}
-      <div className="mb-20">
+      <div className="mb-16 md:mb-20">
         <SectionHeader
           title="About Me"
           subtitle="Learn more about my background, education, and passion for food technology."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-12 md:mt-16">
           {/* Image Column */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -211,7 +211,7 @@ const AboutSectionContent = () => {
           subtitle="My academic journey and qualifications."
         />
 
-        <div className="mt-16 space-y-12">
+        <div className="mt-12 md:mt-16 space-y-8 md:space-y-12">
           {educationTimeline.map((education, index) => (
             <motion.div
               key={education.degree}

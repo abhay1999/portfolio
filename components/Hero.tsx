@@ -10,6 +10,25 @@ const Hero = () => {
   const backgroundControls = useAnimation();
   const gradientControls = useAnimation();
   
+  const availableItems = [
+    'Internship Opportunities',
+    'Research Collaborations',
+    'Project Partnerships',
+    'Consulting Work',
+  ];
+
+  const listContainer = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: 0.12 },
+    },
+  };
+
+  const listItem = {
+    hidden: { opacity: 0, y: 12 },
+    show: { opacity: 1, y: 0 },
+  };
+  
   useEffect(() => {
     setIsMounted(true);
     
@@ -113,8 +132,8 @@ const Hero = () => {
         />
       </div>
       
-      <div className="container mx-auto px-4 md:px-6 pt-32 pb-20 flex flex-col items-center justify-center min-h-screen relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-32 pb-20 flex flex-col items-center justify-center min-h-screen relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -190,6 +209,49 @@ const Hero = () => {
                 Download CV
               </motion.a>
             </div>
+
+            {/* Availability panel */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '0px 0px -80px 0px' }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-10 relative"
+            >
+              {/* Glow background */}
+              <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-primary-400/40 via-secondary-400/40 to-primary-400/40 blur-xl opacity-60" aria-hidden="true" />
+              <div className="relative rounded-2xl border border-gray-200/70 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur supports-[backdrop-filter]:backdrop-blur-sm p-5 text-left shadow-[0_2px_18px_rgba(2,132,199,0.06)]">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary-600 text-white shadow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-2.59a.75.75 0 0 0-1.06-1.06l-4.72 4.72-1.69-1.69a.75.75 0 1 0-1.06 1.06l2.22 2.22c.293.293.767.293 1.06 0l5.25-5.25Z" clipRule="evenodd" /></svg>
+                  </span>
+                  <div>
+                    <h3 className="text-lg font-display font-semibold text-gray-900 dark:text-white">Available For</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Open to impactful opportunities and collaborations</p>
+                  </div>
+                </div>
+                <motion.ul
+                  variants={listContainer}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  className="grid grid-cols-1 sm:grid-cols-2 gap-2"
+                >
+                  {availableItems.map((item) => (
+                    <motion.li
+                      key={item}
+                      variants={listItem}
+                      className="flex items-center gap-2 p-2 rounded-lg hover:bg-primary-50/70 dark:hover:bg-primary-900/20 transition-colors"
+                    >
+                      <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-2.59a.75.75 0 0 0-1.06-1.06l-4.72 4.72-1.69-1.69a.75.75 0 1 0-1.06 1.06l2.22 2.22c.293.293.767.293 1.06 0l5.25-5.25Z" clipRule="evenodd" /></svg>
+                      </span>
+                      <span className="text-gray-800 dark:text-gray-200 text-sm font-medium">{item}</span>
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </div>
+            </motion.div>
           </motion.div>
           
           <motion.div

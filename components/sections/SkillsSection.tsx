@@ -63,15 +63,15 @@ const SkillsSection = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 md:px-6">
+    <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <SectionHeader
         title="Skills & Certifications"
         subtitle="A comprehensive overview of my technical skills, soft skills, and certifications in food technology."
       />
 
       {/* Technical Skills Section */}
-      <div className="mb-20">
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-between mt-16 gap-8">
+      <div className="mb-16 md:mb-20">
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-between mt-12 md:mt-16 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -135,8 +135,8 @@ const SkillsSection = () => {
       </div>
 
       {/* Soft Skills Section */}
-      <div className="mb-20">
-        <div className="flex flex-col md:flex-row-reverse items-center md:items-start justify-between mt-16 gap-8">
+      <div className="mb-16 md:mb-20">
+        <div className="flex flex-col md:flex-row-reverse items-center md:items-start justify-between mt-12 md:mt-16 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -200,7 +200,7 @@ const SkillsSection = () => {
       </div>
 
       {/* Tools & Technologies */}
-      <div className="mb-20">
+      <div className="mb-16 md:mb-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
