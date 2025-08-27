@@ -49,15 +49,24 @@ const Navbar = () => {
   
   const scrollToSection = (sectionId: string) => {
     setIsOpen(false);
-    // If not on the homepage, navigate to the section there
-    if (typeof window !== 'undefined' && window.location.pathname !== '/') {
-      window.location.href = `/#${sectionId}`;
-      return;
-    }
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    const performScroll = () => {
+      if (typeof window !== 'undefined' && window.location.pathname !== '/') {
+        window.location.href = `/#${sectionId}`;
+        return;
+      }
+      if (sectionId === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const offset = 80; // header height
+        const y = element.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    };
+    // Delay to allow the mobile menu to close before scrolling
+    setTimeout(performScroll, 150);
   };
 
   return (
