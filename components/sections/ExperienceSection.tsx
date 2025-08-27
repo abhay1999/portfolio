@@ -27,26 +27,26 @@ const ExperienceSection = () => {
     // },
   ];
 
-  const projects = [
-    {
-      title: 'Sustainable Food Packaging Solution',
-      description: 'Developed a biodegradable food packaging material from agricultural waste. Conducted tests for durability, food safety, and environmental impact.',
-      image: '/placeholder.jpg',
-      technologies: ['Sustainable Materials', 'Food Safety', 'Packaging Technology'],
-    },
-    {
-      title: 'Functional Food Product Development',
-      description: 'Created a fortified food product with enhanced nutritional properties targeted at addressing specific dietary deficiencies.',
-      image: '/placeholder.jpg',
-      technologies: ['Food Formulation', 'Nutrition', 'Product Development'],
-    },
-    {
-      title: 'Food Processing Efficiency Analysis',
-      description: 'Analyzed and optimized food processing operations to reduce waste and energy consumption while maintaining product quality.',
-      image: '/placeholder.jpg',
-      technologies: ['Process Optimization', 'Food Technology', 'Sustainability'],
-    },
-  ];
+  // const projects = [
+  //   {
+  //     title: 'Sustainable Food Packaging Solution',
+  //     description: 'Developed a biodegradable food packaging material from agricultural waste. Conducted tests for durability, food safety, and environmental impact.',
+  //     image: '/placeholder.jpg',
+  //     technologies: ['Sustainable Materials', 'Food Safety', 'Packaging Technology'],
+  //   },
+  //   {
+  //     title: 'Functional Food Product Development',
+  //     description: 'Created a fortified food product with enhanced nutritional properties targeted at addressing specific dietary deficiencies.',
+  //     image: '/placeholder.jpg',
+  //     technologies: ['Food Formulation', 'Nutrition', 'Product Development'],
+  //   },
+  //   {
+  //     title: 'Food Processing Efficiency Analysis',
+  //     description: 'Analyzed and optimized food processing operations to reduce waste and energy consumption while maintaining product quality.',
+  //     image: '/placeholder.jpg',
+  //     technologies: ['Process Optimization', 'Food Technology', 'Sustainability'],
+  //   },
+  // ];
 
   const containerVariants = {
     hidden: {},
@@ -139,7 +139,7 @@ const ExperienceSection = () => {
         </div>
       </div>
 
-      {/* Projects Section */}
+      {/* Projects Section (commented out for future use)
       <div>
         <SectionHeader
           title="Projects"
@@ -183,6 +183,7 @@ const ExperienceSection = () => {
           ))}
         </div>
       </div>
+      */}
     </div>
   );
 };
