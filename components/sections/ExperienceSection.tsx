@@ -12,7 +12,7 @@ const ExperienceSection = () => {
       period: 'Jun 2025 - July 2025',
       description: 'Performed sensory and lab analyses on peanut butter samples, developed a new flavour variant, and collaborated with R&D to enhance quality, shelf life, and sensory attributes.',
       skills: ['Research Methods', 'Data Analysis', 'Food Preservation'],
-      certificateImage: '/certificate/cert_5.jpeg',
+      certificateImage: '/certificate/exp_1.jpeg',
     },
     {
       title: 'Food Technology Entrepreneurship Development And Operation of Food Processing Pilot Plants ',
