@@ -15,7 +15,7 @@ const ExperienceSection = () => {
       title: 'Research and Development Intern',
       company: 'NuttyVillage (CSIR_IITR) Lucknow',
       period: 'Jun 2025 - July 2025',
-      description: 'Performed sensory and lab analyses on peanut butter samples, developed a novel coffee-flavoured variant, and collaborated with R&D to enhance quality, shelf life, and sensory attributes.',
+      description: 'Performed sensory and lab analyses on peanut butter samples, developed a new flavour variant, and collaborated with R&D to enhance quality, shelf life, and sensory attributes.',
       skills: ['Research Methods', 'Data Analysis', 'Food Preservation'],
     },
     // {
