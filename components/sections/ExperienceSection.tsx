@@ -20,7 +20,7 @@ const ExperienceSection = () => {
       period: 'Dec 2024',
       description: 'Gained comprehensive hands-on experience across diverse food plants (fruit/veg, dairy, bakery, RTE, meat), advancing skills in processing, preservation, and quality control. This multifaceted exposure enhanced practical industry insights and technical understanding of food production systems.',
       skills: ['Quality Control', 'Product Development', 'Food Safety'],
-      certificateImage: '/certificate/cert_2.jpeg',
+      certificateImage: '/certificate/exp_2.jpeg',
     },
   
     // {

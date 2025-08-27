@@ -113,8 +113,8 @@ const ContactSection = () => {
         </svg>
       ),
       label: 'LinkedIn',
-      value: 'linkedin.com/in/username',
-      href: 'https://linkedin.com/in/username',
+      value: 'linkedin.com/in/shubhangi-gupta-02',
+      href: 'https://linkedin.com/in/shubhangi-gupta-02',
     },
   ];
 
